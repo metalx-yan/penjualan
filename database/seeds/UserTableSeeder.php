@@ -18,18 +18,5 @@ class UserTableSeeder extends Seeder
             'role_id' => 1
         ]);
 
-        App\User::create([
-            'name' => 'purchasing',
-            'username' => 'purchasing',
-            'password' => 'user',
-            'role_id' => 2
-        ]);
-
-        App\User::create([
-            'name' => 'manager',
-            'username' => 'manager',
-            'password' => 'user',
-            'role_id' => 3
-        ]);
     }
 }

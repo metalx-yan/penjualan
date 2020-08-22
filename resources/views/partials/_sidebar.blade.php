@@ -18,17 +18,14 @@
                     @if (Auth::user()->role->name == 'administrator')
                     <li class="nav-small-cap">PERSONAL</li>
                         <li>
-                        <a class="" href="" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <a class="" href="{{ url('/admin') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
 
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Data Rekrutmen</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Data Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="  ">Jadwal Wawancara</a></li>
-                                <li><a href=" ">Data Pelamar</a></li>
-                                <li><a href="  ">Lowongan Kerja</a></li>
-                                {{-- <li><a href=" {{ route('criteria.index') }} ">Kriteria</a></li>
-                                <li><a href=" {{ route('requirement.index') }} ">Persyaratan Pelamar</a></li> --}}
+                                <li><a href="{{ route('interior.index') }}">Desain Interior</a></li>
+                                <li><a href="{{ route('building.index') }}">Building Construction</a></li>
                             </ul>
                         </li>
                        

@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -15,10 +16,11 @@
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator']], function() {
 
     Route::get('/', function () {
-
         return view('admin.index');
     });
-        
+    
+    Route::resource('/interior', 'InteriorController');
+    Route::resource('/building', 'BuildingController');
 });
 
 Route::group(['prefix' => 'purchasing', 'middleware' => ['auth', 'role:purchasing']], function() {
