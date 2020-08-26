@@ -45,6 +45,11 @@ Route::get('/', function () {
     return view('welcome', compact('schema', 'records'));
 });
 
+Route::get('/ordernow', function () {
+
+    return view('order');
+})->name('order');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -13,6 +13,7 @@
           <li class="active"><a href="">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Our Product</a></li>
+          <li><a href="{{ route('order') }}" target="_blank">Order Now</a></li>
           {{-- <li><a href="#portfolio">Stock Check</a></li>
           <li><a href="#team">Order Now</a></li> --}}
           {{-- <li><a href="#team">Team</a></li>

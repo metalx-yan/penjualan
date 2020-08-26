@@ -309,11 +309,11 @@
   </main><!-- End #main -->
   {{-- <a href=""><i class="icofont-brand-whatsapp"></i></a> --}}
 
-  <div style="position:fixed;left:20px;bottom:20px;">
+  {{-- <div style="position:fixed;left:20px;bottom:20px;">
     <a href="https://web.whatsapp.com/send?phone=+628981493042&text=Selamat datang di PT Sagita Indo Kreasi" target="_blank">
     <button style="background:#32C03C;vertical-align:center;height:36px;border-radius:5px">
     <img src="https://web.whatsapp.com/img/favicon/1x/favicon.png"> Whatsapp Kami</button></a>
-  </div>  
+  </div>   --}}
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
   {{-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> --}}
   
