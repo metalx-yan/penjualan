@@ -24,8 +24,9 @@
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Data Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('interior.index') }}">Desain Interior</a></li>
-                                <li><a href="{{ route('building.index') }}">Building Construction</a></li>
+                                <li><a href="{{ route('interior.index') }}">Daftar Table Jasa</a></li>
+                                <li><a href="{{ route('building.index') }}">Daftar Table Produk</a></li>
+                                <li><a href="{{ route('analisa') }}">Daftar Analisa Produk</a></li>
                             </ul>
                         </li>
                        

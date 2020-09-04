@@ -23,14 +23,9 @@
                 @method('PUT')
                 <div class="row">
                     <div class="col-md-3">
-                        <label for="">Nama</label>
-                        <input type="text" name="name" value="{{ $get->name }}" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" required>
-                        {!! $errors->first('name', '<span class="invalid-feedback">:message</span>') !!}
-                    </div>
-                    <div class="col-md-3">
-                        <label for="">Harga</label>
-                        <input type="text" name="price" value="{{ $get->price }}" class="form-control {{ $errors->has('price') ? 'is-invalid' : ''}}" required>
-                        {!! $errors->first('price', '<span class="invalid-feedback">:message</span>') !!}
+                        <label for="">Jenis Jasa</label>
+                        <input type="text" name="type" value="{{ $get->type }}" class="form-control {{ $errors->has('type') ? 'is-invalid' : ''}}" required>
+                        {!! $errors->first('type', '<span class="invalid-feedback">:message</span>') !!}
                     </div>
                     <div class="col-md-3">
                         <label for="">Stok</label>

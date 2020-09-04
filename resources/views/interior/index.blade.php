@@ -28,8 +28,7 @@
                 <thead>
                     <tr>                        
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>Harga</th>
+                        <th>Jenis Jasa</th>
                         <th>Quantity</th>
                         <th>Action</th>
                     </tr>
@@ -39,8 +38,7 @@
                         <tr>
            
                             <td>{{ $no++ }}</td>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->price }}</td>
+                            <td>{{ $item->type }}</td>
                             <td>{{ $item->quantity }}</td>
                             <td> 
                                 <div class="row">

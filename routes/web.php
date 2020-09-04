@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     Route::get('/', function () {
         return view('admin.index');
     });
+    Route::get('/analisa', 'HomeController@analisa')->name('analisa');
     
     Route::resource('/interior', 'InteriorController');
     Route::resource('/building', 'BuildingController');
@@ -39,6 +40,8 @@ Route::group(['prefix' => 'manager', 'middleware' => ['auth', 'role:manager']], 
     
 });
 
+Route::get('click/{id}', 'HomeController@click')->name('click');
+
 
 Route::get('/', function () {
 
@@ -49,6 +52,10 @@ Route::get('/ordernow', function () {
 
     return view('order');
 })->name('order');
+
+Route::get('/stockcheck', function () {
+    return view('stock');
+})->name('stock');
 
 Auth::routes();
 

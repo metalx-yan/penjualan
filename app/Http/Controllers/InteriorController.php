@@ -37,9 +37,8 @@ class InteriorController extends Controller
     public function store(Request $request)
     {
         $store = $request->validate([
-            'name'              =>  'required|max:30',
+            'type'              =>  'required|max:30',
             'quantity'            =>  'required|string',
-            'price'      =>  'required|numeric',
         ]);
 
         Interior::create($store);
@@ -80,15 +79,13 @@ class InteriorController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'              =>  'required|max:30',
+            'type'              =>  'required|max:30',
             'quantity'            =>  'required|string',
-            'price'      =>  'required|numeric',
         ]);
 
         $update = Interior::findOrFail($id);
-        $update->name = $request->name;
+        $update->type = $request->type;
         $update->quantity = $request->quantity;
-        $update->price = $request->price;
         $update->save();
 
         return redirect()->route('interior.index');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Increment;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function click($id)
+    {
+        Increment::find($id)->increment('count', 1);
+        return redirect()->back();
+    }
+
+    public function analisa(Type $var = null)
+    {
+        $all = Increment::all();
+        return view('analisa.index', compact('all'));
     }
 }

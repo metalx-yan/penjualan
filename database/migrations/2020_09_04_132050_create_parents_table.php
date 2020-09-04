@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInteriorsTable extends Migration
+class CreateParentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateInteriorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interiors', function (Blueprint $table) {
+        Schema::create('parents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
-            $table->string('quantity');
-            $table->boolean('status')->default(0);
+            $table->string('name');
             $table->timestamps();
+        });
+
+        Schema::table('increments', function (Blueprint $table) {
+            $table->unsignedBigInteger('parents_id');
+
+            $table->foreign('parents_id')->references('id')->on('parents');
         });
     }
 
@@ -29,6 +33,6 @@ class CreateInteriorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interiors');
+        Schema::dropIfExists('parents');
     }
 }

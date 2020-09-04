@@ -195,7 +195,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
               {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
-              <h4 class="title"><a href="">Civil engineering</a></h4>
+              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lgsss">Wood Working</a></h4>
               <hr>
               <img src="{{ asset('images/Civil engineering.jpg') }}" height="100px"  alt="" style="margin-top:30px;">
               {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p> --}}
@@ -205,7 +205,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box icon-box-cyan">
               {{-- <div class="icon"><i class="bx bx-file"></i></div> --}}
-              <h4 class="title"><a href="">Desain Furniture</a></h4>
+              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lgss">Furniture</a></h4>
               <hr>
 
               <img src="{{ asset('images/Desain-Furniture-Kantor-Kekinian.jpg') }}" height="120px"  alt="" style="margin-top:30px;">
@@ -218,7 +218,7 @@
             <div class="icon-box icon-box-green">
               {{-- <div class="icon"><i class="bx bx-tachometer"></i></div> --}}
 
-              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lgs">Building Construction</a></h4>
+              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lgs">Design Arch & Furniture</a></h4>
               <hr>
               <img src="{{ asset('images/konstruksi.png') }}" height="110px"  alt="" style="margin-top:30px;">
 
@@ -229,7 +229,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box icon-box-blue">
               {{-- <div class="icon"><i class="bx bx-world"></i></div> --}}
-              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lg">Desain Interior</a></h4>
+              <h4 class="title"><a href="" data-toggle="modal" data-target=".bd-example-modal-lg">Construct Working</a></h4>
               {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> --}}
 
               
@@ -246,24 +246,20 @@
             <div class="modal-content">
               <div class="container-fluid">                    
                   <hr>
-                    <table class="table">
-                      <thead class="thead-light">
-                        <tr>
-                          <th scope="col">Name</th>
-                          <th scope="col">Quantity</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          @foreach (App\Interior::all() as $interior)                            
-                          <tr>
-                              <th>{{ $interior->name }}</th>
-                              
-                              <th>{{ $interior->quantity }}</th>
-                              
-                          </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
+                  <h3><center>Construct Working</center></h3>
+                  @foreach (App\Increment::all() as $inc)
+                  @if ($inc->parents->name == 'construct working')
+                      
+              <hr>
+                <div class="row">
+                    <img src="{{ asset($inc->images) }}" alt="" height="80%" width="30%">  
+                    <b><span>{{ ucwords($inc->name) }}</span></b>
+                  </div>                      
+
+                  <a href="{{ route('click', $inc->id) }}" class="btn btn-primary btn-sm float-right">Teken</a>
+                
+                @endif
+                @endforeach
                 <hr>
 
               </div>
@@ -276,30 +272,79 @@
             <div class="modal-content">
               <div class="container-fluid">
                 <hr>
-                    <table class="table">
-                      <thead class="thead-light">
-                        <tr>
-                          <th scope="col">Name</th>
-                          <th scope="col">Quantity</th>
-                          <th scope="col">Size</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach (App\Building::all() as $interior)                            
-                          <tr>
-                              <th>{{ $interior->name }}</th>                              
-                              <th>{{ $interior->quantity }}</th>
-                              <th>{{ $interior->size }}</th>
-                          </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
+                <h3><center>Design Arch & Furniture</center></h3>
+                @foreach (App\Increment::all() as $inc)
+                    @if ($inc->parents->name == 'design architecture and furniture')
+                        
+                <hr>
+                  <div class="row">
+                      <img src="{{ asset($inc->images) }}" alt="" height="80%" width="30%">  
+                      <b><span>{{ ucwords($inc->name) }}</span></b>
+                    </div>                      
+
+                    <a href="{{ route('click', $inc->id) }}" class="btn btn-primary btn-sm float-right">Teken</a>
+                  
+                  @endif
+                  @endforeach
                 <hr>
 
               </div>
             </div>
           </div>
         </div>
+
+        <div class="modal fade bd-example-modal-lgss" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="container-fluid">                    
+                    <hr>
+                    <h3><center>Furniture</center></h3>
+                    @foreach (App\Increment::all() as $inc)
+                    @if ($inc->parents->name == 'furniture')
+                        
+                <hr>
+                  <div class="row">
+                      <img src="{{ asset($inc->images) }}" alt="" height="80%" width="30%">  
+                      <b><span>{{ ucwords($inc->name) }}</span></b>
+                    </div>                      
+                    <a href="{{ route('click', $inc->id) }}" class="btn btn-primary btn-sm float-right">Teken</a>
+                  
+                  @endif
+                  @endforeach
+                  <hr>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="modal fade bd-example-modal-lgsss" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="container-fluid">
+                  <hr>
+                  <h3><center>Wood Working</center></h3>
+                  @foreach (App\Increment::all() as $inc)
+                      @if ($inc->parents->name == 'wood working')
+                          
+                  <hr>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img src="{{ asset($inc->images) }}" alt="" height="100%" width="60%">  
+                        <b><span>{{ ucwords($inc->name) }}</span></b>
+                      </div>                      
+                    </div>
+                    
+                    <a href="{{ route('click', $inc->id) }}" class="btn btn-primary btn-sm float-right">Teken</a>
+                    
+                    @endif
+                    @endforeach
+                  <hr>
+  
+                </div>
+              </div>
+            </div>
+          </div>
 
       </div>
     </section><!-- End Services Section -->
