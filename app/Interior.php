@@ -8,4 +8,5 @@ class Interior extends Model
 {
     protected $guarded = [];
     
+    protected $table = 'jasa';
 }

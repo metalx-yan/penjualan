@@ -13,7 +13,7 @@ class CreateInteriorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interiors', function (Blueprint $table) {
+        Schema::create('jasa', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('quantity');
