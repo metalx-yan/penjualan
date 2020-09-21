@@ -27,6 +27,7 @@
                                 <li><a href="{{ route('interior.index') }}">Daftar Table Jasa</a></li>
                                 <li><a href="{{ route('building.index') }}">Daftar Table Produk</a></li>
                                 <li><a href="{{ route('analisa') }}">Daftar Analisa Produk</a></li>
+                                <li><a href="{{ route('increment.index') }}">Daftar Child</a></li>
                             </ul>
                         </li>
                        
@@ -50,7 +51,7 @@
                       
                     @endif
 
-                    @if (Auth::user()->role->name == 'manager')
+                    @if (Auth::user()->role->name == 'user')
                     <li class="nav-small-cap">PERSONAL</li>
                     <li>
                         <a class="" href="" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>

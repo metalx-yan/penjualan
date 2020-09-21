@@ -5,6 +5,12 @@
 
 <body>
     @include('template_partials._navbar')
+    <!-- 2. AddChat widget -->
+    <div id="addchat_app" 
+    data-baseurl="{{ url('') }}"
+    data-csrfname="{{ 'X-CSRF-Token' }}"
+    data-csrftoken="{{ csrf_token() }}"
+    ></div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
@@ -330,7 +336,7 @@
                   <hr>
                     <div class="row">
                       <div class="col-md-6">
-                        <img src="{{ asset($inc->images) }}" alt="" height="100%" width="60%">  
+                        <img src="{{ asset('images/' . $inc->images) }}" alt="" height="100%" width="60%">  
                         <b><span>{{ ucwords($inc->name) }}</span></b>
                       </div>                      
                     </div>

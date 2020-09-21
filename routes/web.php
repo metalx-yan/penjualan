@@ -22,6 +22,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     
     Route::resource('/interior', 'InteriorController');
     Route::resource('/building', 'BuildingController');
+
+    Route::get('increment', 'IncrementController@index')->name('increment.index');
+    Route::get('increment/create', 'IncrementController@create')->name('increment.create');
+    Route::get('increment/{id}', 'IncrementController@view')->name('increment.view');
+    Route::post('increment', 'IncrementController@store')->name('increment.store');
+    Route::put('increment/{id}', 'IncrementController@update')->name('increment.update');
+    Route::delete('increment/{id}', 'IncrementController@destroy')->name('increment.destroy');
 });
 
 Route::group(['prefix' => 'purchasing', 'middleware' => ['auth', 'role:purchasing']], function() {
@@ -32,7 +39,7 @@ Route::group(['prefix' => 'purchasing', 'middleware' => ['auth', 'role:purchasin
     
 });
 
-Route::group(['prefix' => 'manager', 'middleware' => ['auth', 'role:manager']], function() {
+Route::group(['prefix' => 'user', 'middleware' => ['auth', 'role:user']], function() {
     Route::get('/', function () {
 
         return view('manager.index');
@@ -60,3 +67,6 @@ Route::get('/stockcheck', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Addchat::routes();

@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
             } elseif (Auth::user()->role->name == 'purchasing') {
                 return redirect('/purchasing');
             }else {
-                return redirect('/manager');
+                return redirect('/user');
             }
         }
 
